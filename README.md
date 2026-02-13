@@ -15,18 +15,18 @@ While traditional machine learning models often achieve high accuracy (~90%) on 
 * **Problem Identified:** Standard Random Forest pipelines exhibited severe instability ($J=0.24$), proving they overfit to noise rather than signal.
 * **Solution:** Introduced a **50-bootstrap Ensemble Voting** mechanism with an 80% consensus threshold.
 * **Result:** Achieved **Perfect Feature Stability ($J=1.0$)** while maintaining high accuracy (**86.09%**).
-* [cite_start]**Biomarker Discovery:** Identified **Permutation Entropy** at electrodes **Pz, C4, and F8** as the most robust indicators of epileptic activity[cite: 391, 411].
+**Biomarker Discovery:** Identified **Permutation Entropy** at electrodes **Pz, C4, and F8** as the most robust indicators of epileptic activity.
 
 ## 📂 Repository Structure
 | File/Folder | Description |
 | :--- | :--- |
-| `preprocessing.ipynb` | [cite_start]**Step 1:** Raw EEG cleaning (Bandpass 0.5-45Hz, ICA Artifact Removal, AutoReject)[cite: 289]. |
-| `feature_extraction.py` | [cite_start]**Step 2:** Extraction of 1,302 features (Spectral Power, Permutation Entropy, HFD, wPLI2 Connectivity)[cite: 278]. |
+| `preprocessing.ipynb` | **Step 1:** Raw EEG cleaning (Bandpass 0.5-45Hz, ICA Artifact Removal, AutoReject). |
+| `feature_extraction.py` |**Step 2:** Extraction of 1,302 features (Spectral Power, Permutation Entropy, HFD, wPLI2 Connectivity). |
 | `ensemble_voting.ipynb` | **Step 3:** The core logic. Runs 50 bootstrap iterations to calculate Jaccard Index and filter unstable features. |
 | `results/` | Contains the Jaccard Stability heatmaps and Feature Importance plots. |
 
 ## 📊 Dataset
-[cite_start]This study utilizes the **Mount Adora Epilepsy EEG Dataset**[cite: 228, 284].
+This study utilizes the **Mount Adora Epilepsy EEG Dataset**.
 * **Population:** 212 Subjects (110 Epileptic, 102 Normal).
 * **Format:** 23-channel EEG (128 Hz sampling rate).
 * **Preprocessing:** ICA cleaned, segmented into 4-second epochs.
